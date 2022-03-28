@@ -7,7 +7,8 @@
         <entry key="app/src/main/res/drawable/corner_bottom_sheet.xml" value="0.1055" />
         <entry key="app/src/main/res/drawable/corner_shape_bottom_sheet.xml" value="0.1215" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35833333333333334" />
-        <entry key="app/src/main/res/layout/fragment_form_todo_bottom_sheet.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_form_todo_bottom_sheet.xml" value="0.28651685393258425" />
+        <entry key="app/src/main/res/layout/fragment_todos.xml" value="0.33" />
         <entry key="app/src/main/res/layout/todo_item.xml" value="0.35833333333333334" />
       </map>
     </option>
