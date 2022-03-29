@@ -1,5 +1,6 @@
 package com.enigma.simpletodo.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,26 +9,29 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.enigma.simpletodo.R
 import com.enigma.simpletodo.databinding.TodoItemBinding
-import com.enigma.simpletodo.domain.model.Todo
+import com.enigma.simpletodo.data.model.Todo
 
 class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
-    inner class TodoViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = TodoItemBinding.bind(itemView)
 
         fun bind(todo: Todo) {
             binding.apply {
                 tvTodo.text = todo.todo
                 cbTodo.isChecked = todo.isDone
-                setOnClickListener {
-                    onItemClickListener?.let { it(todo) }
+            }
+            itemView.setOnClickListener {
+                onItemClickListener?.let {
+                    it(todo)
                 }
             }
         }
     }
 
     private val differCallback = object : DiffUtil.ItemCallback<Todo>() {
-        override fun areItemsTheSame(oldItem: Todo, newItem: Todo): Boolean = oldItem.id == newItem.id
+        override fun areItemsTheSame(oldItem: Todo, newItem: Todo): Boolean =
+            oldItem.id == newItem.id
 
         override fun areContentsTheSame(oldItem: Todo, newItem: Todo): Boolean = oldItem == newItem
     }
@@ -53,7 +57,7 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
     private var onItemClickListener: ((Todo) -> Unit)? = null
 
-    fun setOnClickListener(listener: (Todo) -> Unit) {
+    fun setOnItemClickListener(listener: (Todo) -> Unit) {
         onItemClickListener = listener
     }
 }

@@ -1,10 +1,10 @@
-package com.enigma.simpletodo.domain.db
+package com.enigma.simpletodo.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.enigma.simpletodo.domain.model.Todo
+import com.enigma.simpletodo.data.model.Todo
 
 @Database(
     entities = [Todo::class],

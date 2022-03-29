@@ -1,8 +1,8 @@
-package com.enigma.simpletodo.domain.db
+package com.enigma.simpletodo.data.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.enigma.simpletodo.domain.model.Todo
+import com.enigma.simpletodo.data.model.Todo
 
 @Dao
 interface TodoDao {
@@ -11,7 +11,7 @@ interface TodoDao {
     suspend fun upsert(todo: Todo): Long
 
     @Query("SELECT * FROM todos")
-    fun getAllTodos(): LiveData<List<Todo>>
+    suspend fun getAllTodos(): List<Todo>
 
     @Delete
     suspend fun deleteTodo(todo: Todo)
