@@ -2,12 +2,9 @@ package com.enigma.simpletodo.ui.todo
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.addTextChangedListener
-import androidx.lifecycle.Observer
 import com.enigma.simpletodo.MainActivity
 import com.enigma.simpletodo.data.model.Todo
 import com.enigma.simpletodo.databinding.FragmentFormTodoBottomSheetBinding
@@ -16,7 +13,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import java.util.*
 
 class FormTodoBottomSheetFragment : BottomSheetDialogFragment() {
     private var _binding: FragmentFormTodoBottomSheetBinding? = null
